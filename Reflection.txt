@@ -1,0 +1,12 @@
+P component is proportional to the CTE. It returns the car to the right position. However, it is also creates oscillation. Here D component (derivative) takes place. It vanishes oscillation.
+In addition, I (integral) component helps to eliminate the CTE even faster by accumulating previous CTEs.
+
+In the video files attached (PID.ogv, PID2.ogv) you can see the results how the car drives on the circle.
+
+
+Hyperparameters were chosen by manual tuning and twiddle. In the main.cpp file you can see the realization of the twiddle algorithm. Most of time when absolute value of CTE exceeds 3.5 the car is out of the road. So, it is the event for re-launching a simulation. During the simulations I calculated mean squared CTE (MSC) and tune each of the parameters to make MSC as low as possible.
+Finally, I come to conclusion that Kp, Ki, Kd = 1, 0, 0 is the best choice :)
+
+Please, look at my algorithm - maybe something I need to improve.
+
+Thanks!
